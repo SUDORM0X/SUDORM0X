@@ -153,6 +153,24 @@
   @media (max-width:560px){
     .writeup-list li{flex-direction:column; gap:4px}
   }
+  /* ---------- stack / neofetch ---------- */
+  .nf{display:flex; gap:28px; align-items:center; flex-wrap:wrap}
+  .nf-logo{flex:0 0 auto}
+  .nf-logo svg{width:132px; height:132px; display:block}
+  .nf-info{flex:1 1 320px; min-width:280px}
+  .nf-info pre{margin:0; white-space:pre; overflow-x:auto; color:var(--ink-dim); font-size:0.86rem; line-height:1.7}
+  .nf-info .nf-user{color:var(--accent); font-weight:700}
+  .nf-info .k{color:var(--ink)}
+  .nf-palette{display:flex; gap:5px; margin-top:18px}
+  .nf-palette span{width:24px; height:12px; border-radius:2px; display:block}
+
+  .stack-groups{display:grid; gap:22px; margin-top:34px}
+  .sg-label{display:block; color:var(--ink-dim); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.14em; margin:0 0 10px}
+  .sg-label::before{content:"# "; color:var(--accent)}
+  .badges{display:flex; flex-wrap:wrap; gap:0}
+  .badges img{height:30px; margin:5px 8px 5px 0; border-radius:4px; filter:saturate(0.82) brightness(0.95); transition:transform .2s ease, filter .2s ease}
+  .badges img:hover{transform:translateY(-4px) scale(1.05); filter:saturate(1.15) drop-shadow(0 0 7px rgba(63,208,201,0.55))}
+
   /* ---------- motion upgrade ---------- */
   .hero{position:relative; overflow:hidden}
   #matrix{
@@ -311,6 +329,123 @@
   <span class="k">"Vulnerability Research"</span>: "0-day research &amp; CVE proof-of-concept",
   <span class="k">"Offensive Tooling"</span>: "automazione per pentest e assumed breach"
 }</pre>
+</div>
+</div>
+</section>
+
+<hr class="hairline">
+
+<section id="stack" data-reveal>
+<h2>stack</h2>
+<p class="lede-col">Non solo offensive security: costruisco anche le applicazioni che poi metto sotto stress. Full-stack, dal silicio del kernel al pixel del frontend.</p>
+<div class="term">
+<div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
+<div class="term-body">
+<p class="cmdline"><span class="prompt">$</span>neofetch</p>
+<div class="nf">
+<div class="nf-logo" aria-hidden="true">
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<rect width="64" height="64" rx="12" fill="#0B0D10"></rect>
+<g fill="none" stroke="#3FD0C9" stroke-linejoin="round" stroke-linecap="round">
+<path d="M8,32 C16,20 24,16 32,16 C40,16 48,20 56,32 C48,44 40,48 32,48 C24,48 16,44 8,32 Z" stroke-width="2.6"></path>
+<circle cx="32" cy="32" r="12.5" stroke-width="1.6" fill="#14110C"></circle>
+<rect x="25" y="25" width="14" height="14" rx="2.5" stroke-width="1.6" fill="#0B0D10"></rect>
+</g>
+<g stroke="#3FD0C9" stroke-width="0.8" opacity="0.4">
+<line x1="29.7" y1="25" x2="29.7" y2="39"></line>
+<line x1="34.3" y1="25" x2="34.3" y2="39"></line>
+<line x1="25" y1="29.7" x2="39" y2="29.7"></line>
+<line x1="25" y1="34.3" x2="39" y2="34.3"></line>
+</g>
+<circle cx="32" cy="32" r="3.2" fill="#3FD0C9">
+<animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"></animate>
+</circle>
+</svg>
+</div>
+<div class="nf-info">
+<pre><span class="nf-user">sudorm0x</span>@<span class="nf-user">offsec</span>
+─────────────────────────────
+<span class="k">Role</span>     : Offensive Security + Full-Stack Dev
+<span class="k">Langs</span>    : TypeScript · Python · Go · C · Bash · C#
+<span class="k">Frontend</span> : React · Next.js · Tailwind · GSAP
+<span class="k">Backend</span>  : Node.js · PostgreSQL · Drizzle · Zod
+<span class="k">Testing</span>  : Playwright · Vitest
+<span class="k">Security</span> : Red Team · Active Directory · Web · 0-day
+<span class="k">Recon</span>    : nmap · Burp Suite · Metasploit · BloodHound
+<span class="k">DevOps</span>   : Git · Docker · Linux
+<span class="k">Editor</span>   : nvim · VS Code</pre>
+<div class="nf-palette">
+<span style="background:#0B0D10;border:1px solid #22262C"></span>
+<span style="background:#ff4d6d"></span>
+<span style="background:#3FD0C9"></span>
+<span style="background:#2A9D97"></span>
+<span style="background:#FFF4E0"></span>
+<span style="background:#9AA0A6"></span>
+<span style="background:#11141A"></span>
+<span style="background:#22262C"></span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="stack-groups">
+<div class="stack-group">
+<span class="sg-label">languages</span>
+<div class="badges">
+<img loading="lazy" alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+<img loading="lazy" alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<img loading="lazy" alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img loading="lazy" alt="Go" src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white">
+<img loading="lazy" alt="C" src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white">
+<img loading="lazy" alt="C#" src="https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=csharp&logoColor=white">
+<img loading="lazy" alt="Bash" src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white">
+<img loading="lazy" alt="PowerShell" src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white">
+</div>
+</div>
+<div class="stack-group">
+<span class="sg-label">frontend</span>
+<div class="badges">
+<img loading="lazy" alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+<img loading="lazy" alt="Next.js" src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
+<img loading="lazy" alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white">
+<img loading="lazy" alt="GSAP" src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white">
+<img loading="lazy" alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img loading="lazy" alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+</div>
+</div>
+<div class="stack-group">
+<span class="sg-label">backend &amp; data</span>
+<div class="badges">
+<img loading="lazy" alt="Node.js" src="https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white">
+<img loading="lazy" alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white">
+<img loading="lazy" alt="Drizzle ORM" src="https://img.shields.io/badge/Drizzle-C5F74F?style=for-the-badge&logo=drizzle&logoColor=black">
+<img loading="lazy" alt="Zod" src="https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod&logoColor=white">
+<img loading="lazy" alt="Oracle" src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white">
+</div>
+</div>
+<div class="stack-group">
+<span class="sg-label">security &amp; recon</span>
+<div class="badges">
+<img loading="lazy" alt="Red Team" src="https://img.shields.io/badge/Red_Team-3FD0C9?style=for-the-badge&labelColor=0B0D10">
+<img loading="lazy" alt="Active Directory" src="https://img.shields.io/badge/Active_Directory-3FD0C9?style=for-the-badge&labelColor=0B0D10">
+<img loading="lazy" alt="Web Exploitation" src="https://img.shields.io/badge/Web_Exploitation-3FD0C9?style=for-the-badge&labelColor=0B0D10">
+<img loading="lazy" alt="0-day Research" src="https://img.shields.io/badge/0day_Research-3FD0C9?style=for-the-badge&labelColor=0B0D10">
+<img loading="lazy" alt="Burp Suite" src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white">
+<img loading="lazy" alt="Metasploit" src="https://img.shields.io/badge/Metasploit-2A2A2A?style=for-the-badge&logo=metasploit&logoColor=white">
+<img loading="lazy" alt="Wireshark" src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white">
+<img loading="lazy" alt="Kali Linux" src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white">
+</div>
+</div>
+<div class="stack-group">
+<span class="sg-label">devops &amp; tooling</span>
+<div class="badges">
+<img loading="lazy" alt="Git" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">
+<img loading="lazy" alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
+<img loading="lazy" alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+<img loading="lazy" alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
+<img loading="lazy" alt="Playwright" src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white">
+<img loading="lazy" alt="VS Code" src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+</div>
 </div>
 </div>
 </section>
