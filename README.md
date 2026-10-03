@@ -6,9 +6,7 @@
 
 **offensive security engineer · full-stack dev**
 
-![Red Team](https://img.shields.io/badge/Red_Team-3FD0C9?style=for-the-badge&labelColor=0B0D10)
-![Adversary Emulation](https://img.shields.io/badge/Adversary_Emulation-3FD0C9?style=for-the-badge&labelColor=0B0D10)
-![0-day Research](https://img.shields.io/badge/0day_Research-3FD0C9?style=for-the-badge&labelColor=0B0D10)
+<img src="assets/skills/focus.svg" alt="Red Team · Adversary Emulation · 0-day Research">
 
 </div>
 
@@ -27,35 +25,23 @@ e costruisco le stesse applicazioni che poi metto sotto stress.
 
 **Languages**
 <br>
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=csharp&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+<img src="assets/skills/languages.svg" alt="TypeScript · Python · JavaScript · Go · C · C# · Bash · PowerShell">
 
 **Frontend**
 <br>
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+<img src="assets/skills/frontend.svg" alt="React · Next.js · Tailwind · GSAP">
 
-**Backend & Data**
+**Backend &amp; Data**
 <br>
-![Node.js](https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Drizzle](https://img.shields.io/badge/Drizzle-C5F74F?style=for-the-badge&logo=drizzle&logoColor=black)
-![Zod](https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod&logoColor=white)
+<img src="assets/skills/backend.svg" alt="Node.js · PostgreSQL · Drizzle · Zod">
 
-**Security & Recon**
+**Security &amp; Recon**
 <br>
-![Active Directory](https://img.shields.io/badge/Active_Directory-3FD0C9?style=for-the-badge&labelColor=0B0D10)
-![Web Exploitation](https://img.shields.io/badge/Web_Exploitation-3FD0C9?style=for-the-badge&labelColor=0B0D10)
-![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
-![Metasploit](https://img.shields.io/badge/Metasploit-2A2A2A?style=for-the-badge&logo=metasploit&logoColor=white)
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
+<img src="assets/skills/security.svg" alt="Active Directory · Web Exploitation · Burp Suite · Metasploit · Kali Linux · nmap">
+
+**DevOps &amp; Tooling**
+<br>
+<img src="assets/skills/tooling.svg" alt="Git · Docker · Linux · Playwright · Neovim · VS Code">
 
 </div>
 
