@@ -16,15 +16,13 @@
 
 <div align="center">
 
-<img src="assets/skills/languages.svg" alt="TypeScript · Python · JavaScript · Go · C · C# · Bash · PowerShell"/>
+<img src="assets/skills/security.svg" alt="Active Directory · Web Exploitation · Burp Suite · Metasploit · Kali Linux"/>
 <br>
-<img src="assets/skills/frontend.svg" alt="React · Next.js · Tailwind · GSAP"/>
+<img src="assets/skills/languages.svg" alt="Python · Go · C · Bash · TypeScript"/>
 <br>
-<img src="assets/skills/backend.svg" alt="Node.js · PostgreSQL · Drizzle · Zod"/>
+<img src="assets/skills/webdata.svg" alt="React · Next.js · Node.js · PostgreSQL"/>
 <br>
-<img src="assets/skills/security.svg" alt="Active Directory · Web Exploitation · Burp Suite · Metasploit · Kali Linux · nmap"/>
-<br>
-<img src="assets/skills/tooling.svg" alt="Git · Docker · Linux · Playwright · Neovim · VS Code"/>
+<img src="assets/skills/infra.svg" alt="Docker · Linux · Git"/>
 
 </div>
 
