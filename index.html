@@ -152,15 +152,68 @@
   @media (max-width:560px){
     .writeup-list li{flex-direction:column; gap:4px}
   }
+  /* ---------- motion upgrade ---------- */
+  .hero{position:relative; overflow:hidden}
+  #matrix{
+    position:absolute; inset:0; width:100%; height:100%;
+    z-index:0; opacity:0.13; pointer-events:none;
+  }
+  .hero > *:not(#matrix){position:relative; z-index:1}
+
+  /* faint scanline overlay */
+  body::after{
+    content:""; position:fixed; inset:0; z-index:9999; pointer-events:none;
+    background:repeating-linear-gradient(0deg, rgba(63,208,201,0.03) 0 1px, transparent 1px 3px);
+  }
+
+  /* glitch wordmark */
+  .glitch{position:relative}
+  .glitch::before, .glitch::after{
+    content:attr(data-text); position:absolute; left:0; top:0; width:100%;
+    overflow:hidden; pointer-events:none;
+  }
+  .glitch::before{color:#ff4d6d; animation:glitch1 4s infinite}
+  .glitch::after{color:var(--accent); animation:glitch2 4s infinite}
+  @keyframes glitch1{
+    0%,90%,100%{clip-path:inset(0 0 100% 0); transform:translateX(0); opacity:0}
+    91%{clip-path:inset(8% 0 62% 0); transform:translateX(-3px); opacity:.75}
+    94%{clip-path:inset(44% 0 18% 0); transform:translateX(3px); opacity:.75}
+    97%{clip-path:inset(70% 0 6% 0); transform:translateX(-2px); opacity:.6}
+  }
+  @keyframes glitch2{
+    0%,90%,100%{clip-path:inset(100% 0 0 0); transform:translateX(0); opacity:0}
+    92%{clip-path:inset(62% 0 8% 0); transform:translateX(3px); opacity:.75}
+    95%{clip-path:inset(18% 0 50% 0); transform:translateX(-3px); opacity:.75}
+    98%{clip-path:inset(40% 0 30% 0); transform:translateX(2px); opacity:.6}
+  }
+
+  /* scroll reveal */
+  [data-reveal]{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease}
+  [data-reveal].in{opacity:1; transform:none}
+
+  /* interactive rows */
+  tbody tr{transition:background .2s ease}
+  tbody tr:hover{background:rgba(63,208,201,0.05)}
+  .writeup-list li{transition:padding-left .2s ease, background .2s ease}
+  .writeup-list li:hover{padding-left:10px; background:rgba(63,208,201,0.04)}
+
+  @media (max-width:560px){
+    #matrix{opacity:0.08}
+  }
   @media (prefers-reduced-motion: reduce){
     .typed{animation:none; width:27ch; border-right:none}
     html{scroll-behavior:auto}
+    [data-reveal]{opacity:1; transform:none; transition:none}
+    #matrix{display:none}
+    .glitch::before,.glitch::after{display:none}
+    body::after{display:none}
   }
 </style>
 </head>
 <body>
 
 <header class="hero">
+<canvas id="matrix" aria-hidden="true"></canvas>
 <svg class="hero-eye" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SUDORM0X — logo animato a occhio con pupilla a microchip">
 <defs>
 <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
@@ -206,7 +259,7 @@
 </g>
 </svg>
 
-<h1>SUDO<span>RM0X</span></h1>
+<h1 class="glitch" data-text="SUDORM0X">SUDO<span>RM0X</span></h1>
 <div class="terminal-line">
 <span class="prompt">$</span> <span class="cmd">whoami</span><br>
 <span class="typed">offensive security engineer</span>
@@ -216,7 +269,7 @@
 
 <main class="wrap">
 
-<section id="focus">
+<section id="focus" data-reveal>
 <h2>cosa faccio</h2>
 <p class="lede-col">Lavoro sul lato offensivo della sicurezza: dall'accesso iniziale al movimento laterale, dallo studio di un singolo CVE alla riproduzione di una campagna APT end-to-end.</p>
 <div class="term">
@@ -236,7 +289,7 @@
 
 <hr class="hairline">
 
-<section id="projects">
+<section id="projects" data-reveal>
 <h2>progetti</h2>
 <p class="lede-col">Una selezione di tool e ricerca che ho pubblicato. Codice e note reali, non slide.</p>
 <table>
@@ -254,7 +307,7 @@
 
 <hr class="hairline">
 
-<section id="writeups">
+<section id="writeups" data-reveal>
 <h2>research &amp; note</h2>
 <p class="lede-col">Metodologia e appunti tecnici dal campo. Quello che uso davvero durante un assessment.</p>
 <ul class="writeup-list">
@@ -266,7 +319,7 @@
 
 <hr class="hairline">
 
-<section id="contact">
+<section id="contact" data-reveal>
 <h2>contatti</h2>
 <div class="term">
 <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
@@ -285,11 +338,64 @@
 </footer>
 
 <script>
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- scroll reveal ---- */
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---- matrix rain in hero ---- */
+  var c = document.getElementById('matrix');
+  if (c && !reduce) {
+    var ctx = c.getContext('2d');
+    var fontSize = 14, cols, drops;
+    var glyphs = '01<>/\\[]{}#$%&*+=?!ABCDEF0123456789アカサタナハマ'.split('');
+    function resize() {
+      var r = c.parentElement.getBoundingClientRect();
+      c.width = r.width; c.height = r.height;
+      cols = Math.max(1, Math.floor(c.width / fontSize));
+      drops = [];
+      for (var i = 0; i < cols; i++) drops[i] = Math.random() * -30;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    var last = 0;
+    function draw(t) {
+      if (t - last > 65) {
+        last = t;
+        ctx.fillStyle = 'rgba(11,13,16,0.09)';
+        ctx.fillRect(0, 0, c.width, c.height);
+        ctx.fillStyle = '#3FD0C9';
+        ctx.font = fontSize + 'px JetBrains Mono, monospace';
+        for (var i = 0; i < drops.length; i++) {
+          var ch = glyphs[Math.floor(Math.random() * glyphs.length)];
+          ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
+          if (drops[i] * fontSize > c.height && Math.random() > 0.975) drops[i] = 0;
+          drops[i]++;
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  }
+
+  /* ---- pause SVG animations when motion is reduced ---- */
+  if (reduce) {
     document.querySelectorAll('svg').forEach(function (svg) {
       if (typeof svg.pauseAnimations === 'function') svg.pauseAnimations();
     });
   }
+})();
 </script>
 
 </body>
