@@ -8,6 +8,7 @@
 <meta property="og:title" content="SUDORM0X">
 <meta property="og:description" content="offensive security engineer — red teaming, adversary emulation, Active Directory, web exploitation, 0-day research">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -197,6 +198,30 @@
   .writeup-list li{transition:padding-left .2s ease, background .2s ease}
   .writeup-list li:hover{padding-left:10px; background:rgba(63,208,201,0.04)}
 
+  /* scroll progress */
+  #progress{
+    position:fixed; top:0; left:0; height:2px; width:0; z-index:10000;
+    background:var(--accent); box-shadow:0 0 8px var(--accent);
+  }
+
+  /* hero entrance */
+  @keyframes riseIn{ from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:none} }
+  .hero-eye{animation:riseIn .8s ease .05s both}
+  .hero h1{animation:riseIn .8s ease .18s both}
+  .hero .terminal-line{animation:riseIn .8s ease .32s both}
+  .hero p.lede{animation:riseIn .8s ease .46s both}
+
+  /* section heading marker */
+  h2::before{content:"▸ "; color:var(--accent)}
+
+  /* blinking cursor in terminal blocks */
+  @keyframes blink{50%{opacity:0}}
+  .term-body .cmdline::after{content:"▋"; color:var(--accent); margin-left:4px; animation:blink 1s step-end infinite}
+
+  /* animated accent bar on project rows */
+  tbody tr td:first-child{border-left:2px solid transparent; transition:border-color .2s ease, padding-left .2s ease}
+  tbody tr:hover td:first-child{border-left-color:var(--accent); padding-left:12px}
+
   @media (max-width:560px){
     #matrix{opacity:0.08}
   }
@@ -207,10 +232,13 @@
     #matrix{display:none}
     .glitch::before,.glitch::after{display:none}
     body::after{display:none}
+    .hero-eye,.hero h1,.hero .terminal-line,.hero p.lede{animation:none}
+    .term-body .cmdline::after{animation:none}
   }
 </style>
 </head>
 <body>
+<div id="progress"></div>
 
 <header class="hero">
 <canvas id="matrix" aria-hidden="true"></canvas>
@@ -387,6 +415,18 @@
       requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
+  }
+
+  /* ---- scroll progress bar ---- */
+  var bar = document.getElementById('progress');
+  if (bar) {
+    var onScroll = function () {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 
   /* ---- pause SVG animations when motion is reduced ---- */
