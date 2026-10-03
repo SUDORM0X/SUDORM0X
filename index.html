@@ -20,7 +20,7 @@
     --bg-raised:#11141A;
     --ink:#EDEDED;
     --ink-dim:#9AA0A6;
-    --accent:#4AF626;
+    --accent:#43D9A0;
     --line:#22262C;
   }
   *{box-sizing:border-box}
@@ -64,15 +64,13 @@
   .terminal-line .cmd{color:var(--ink)}
   .typed{
     display:inline-block;
-    overflow:hidden;
-    white-space:nowrap;
     vertical-align:bottom;
     border-right:2px solid var(--accent);
-    width:0ch;
+    padding-right:3px;
+    min-height:1.2em;
     color:var(--ink);
-    animation:typing 1.6s steps(27, end) 0.3s forwards, caret 0.8s step-end infinite;
+    animation:caret 0.8s step-end infinite;
   }
-  @keyframes typing{ from{width:0ch} to{width:27ch} }
   @keyframes caret{ 50%{border-color:transparent} }
   .hero p.lede{
     max-width:52ch;
@@ -169,7 +167,7 @@
   .sg-label::before{content:"# "; color:var(--accent)}
   .badges{display:flex; flex-wrap:wrap; gap:8px}
   .chip{
-    --neon:#39D353; --neonDim:rgba(57,211,83,0.45);
+    --neon:#43D9A0; --neonDim:rgba(67,217,160,0.42);
     position:relative; overflow:hidden;
     display:inline-flex; align-items:center; gap:8px;
     padding:6px 11px;
@@ -186,23 +184,23 @@
   .chip:hover{transform:translateY(-2px); border-color:var(--neon); box-shadow:0 0 12px var(--neonDim); color:#fff}
   .chip:hover::after{animation:chipscan .7s ease}
   @keyframes chipscan{to{left:160%}}
-  .chip--a{--neon:#4AF626; --neonDim:rgba(74,246,38,0.45)}
-  .chip--b{--neon:#26A641; --neonDim:rgba(38,166,65,0.5)}
-  .chip--c{--neon:#4AF626; --neonDim:rgba(74,246,38,0.45)}
-  .chip--d{--neon:#2EA043; --neonDim:rgba(46,160,67,0.5)}
+  .chip--a{--neon:#7EE7B0; --neonDim:rgba(126,231,176,0.42)}
+  .chip--b{--neon:#22B881; --neonDim:rgba(34,184,129,0.5)}
+  .chip--c{--neon:#43D9A0; --neonDim:rgba(67,217,160,0.42)}
+  .chip--d{--neon:#15835E; --neonDim:rgba(21,131,94,0.55)}
 
   /* ---------- motion upgrade ---------- */
   .hero{position:relative; overflow:hidden}
   #matrix{
     position:absolute; inset:0; width:100%; height:100%;
-    z-index:0; opacity:0.13; pointer-events:none;
+    z-index:0; opacity:0.07; pointer-events:none;
   }
   .hero > *:not(#matrix){position:relative; z-index:1}
 
   /* faint scanline overlay */
   body::after{
     content:""; position:fixed; inset:0; z-index:9999; pointer-events:none;
-    background:repeating-linear-gradient(0deg, rgba(74,246,38,0.03) 0 1px, transparent 1px 3px);
+    background:repeating-linear-gradient(0deg, rgba(67,217,160,0.03) 0 1px, transparent 1px 3px);
   }
 
   /* glitch wordmark */
@@ -232,9 +230,9 @@
 
   /* interactive rows */
   tbody tr{transition:background .2s ease}
-  tbody tr:hover{background:rgba(74,246,38,0.05)}
+  tbody tr:hover{background:rgba(67,217,160,0.05)}
   .writeup-list li{transition:padding-left .2s ease, background .2s ease}
-  .writeup-list li:hover{padding-left:10px; background:rgba(74,246,38,0.04)}
+  .writeup-list li:hover{padding-left:10px; background:rgba(67,217,160,0.04)}
 
   /* scroll progress */
   #progress{
@@ -277,13 +275,13 @@
   tbody tr:hover td:first-child{border-left-color:var(--accent); padding-left:12px}
 
   @media (max-width:560px){
-    #matrix{opacity:0.08}
+    #matrix{opacity:0.05}
     #nav{flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; gap:0; padding:9px 10px; -webkit-overflow-scrolling:touch}
     #nav::-webkit-scrollbar{display:none}
     #nav a{white-space:nowrap; padding:5px 10px; font-size:0.78rem}
   }
   @media (prefers-reduced-motion: reduce){
-    .typed{animation:none; width:27ch; border-right:none}
+    .typed{animation:none; border-right:none}
     html{scroll-behavior:auto}
     [data-reveal]{opacity:1; transform:none; transition:none}
     #matrix{display:none}
@@ -313,40 +311,40 @@
 <svg class="hero-eye" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SUDORM0X — animated eye logo with a microchip pupil">
 <defs>
 <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-<feGaussianBlur stdDeviation="10" result="b"></feGaussianBlur>
+<feGaussianBlur stdDeviation="6" result="b"></feGaussianBlur>
 <feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
 </filter>
 <radialGradient id="irisGrad" cx="50%" cy="42%" r="65%">
-<stop offset="0%" stop-color="#4AF626" stop-opacity="0.16"></stop>
+<stop offset="0%" stop-color="#43D9A0" stop-opacity="0.16"></stop>
 <stop offset="100%" stop-color="#14110C" stop-opacity="1"></stop>
 </radialGradient>
 </defs>
 <rect x="0" y="0" width="500" height="500" fill="#0B0D10"></rect>
 <g transform="translate(-14,40)">
-<circle cx="250" cy="210" r="150" fill="#4AF626" filter="url(#glow)">
-<animate attributeName="opacity" values="0.10;0.22;0.10" dur="3s" repeatCount="indefinite"></animate>
+<circle cx="250" cy="210" r="150" fill="#43D9A0" filter="url(#glow)">
+<animate attributeName="opacity" values="0.05;0.12;0.05" dur="3s" repeatCount="indefinite"></animate>
 </circle>
-<path d="M40,210 C95,118 170,66 250,66 C330,66 405,118 460,210 C405,302 330,354 250,354 C170,354 95,302 40,210 Z" fill="none" stroke="#4AF626" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"></path>
-<path d="M454,198 L488,170" stroke="#4AF626" stroke-width="7" stroke-linecap="round"></path>
-<circle cx="250" cy="210" r="128" fill="none" stroke="#4AF626" stroke-width="1.5" opacity="0.35"></circle>
-<circle cx="250" cy="210" r="122" fill="none" stroke="#4AF626" stroke-width="3" stroke-dasharray="42 324" stroke-linecap="round" opacity="0.7">
+<path d="M40,210 C95,118 170,66 250,66 C330,66 405,118 460,210 C405,302 330,354 250,354 C170,354 95,302 40,210 Z" fill="none" stroke="#43D9A0" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M454,198 L488,170" stroke="#43D9A0" stroke-width="7" stroke-linecap="round"></path>
+<circle cx="250" cy="210" r="128" fill="none" stroke="#43D9A0" stroke-width="1.5" opacity="0.35"></circle>
+<circle cx="250" cy="210" r="122" fill="none" stroke="#43D9A0" stroke-width="3" stroke-dasharray="42 324" stroke-linecap="round" opacity="0.7">
 <animateTransform attributeName="transform" type="rotate" from="0 250 210" to="360 250 210" dur="6s" repeatCount="indefinite"></animateTransform>
 </circle>
-<circle cx="250" cy="210" r="106" fill="url(#irisGrad)" stroke="#4AF626" stroke-width="2"></circle>
-<g transform="rotate(0 250 210)"><line x1="226" y1="174" x2="226" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="223" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="238" y1="174" x2="238" y2="124" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="235" y="117" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="250" y1="174" x2="250" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="247" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="262" y1="174" x2="262" y2="124" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="259" y="117" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="274" y1="174" x2="274" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="271" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect></g>
-<g transform="rotate(90 250 210)"><line x1="226" y1="174" x2="226" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="223" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="238" y1="174" x2="238" y2="124" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="235" y="117" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="250" y1="174" x2="250" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="247" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="262" y1="174" x2="262" y2="124" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="259" y="117" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="274" y1="174" x2="274" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="271" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect></g>
-<g transform="rotate(180 250 210)"><line x1="226" y1="174" x2="226" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="223" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="238" y1="174" x2="238" y2="124" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="235" y="117" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="250" y1="174" x2="250" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="247" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="262" y1="174" x2="262" y2="124" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="259" y="117" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="274" y1="174" x2="274" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="271" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect></g>
-<g transform="rotate(270 250 210)"><line x1="226" y1="174" x2="226" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="223" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="238" y1="174" x2="238" y2="124" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="235" y="117" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="250" y1="174" x2="250" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="247" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="262" y1="174" x2="262" y2="124" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="259" y="117" width="6" height="6" rx="1.5" fill="#4AF626"></rect><line x1="274" y1="174" x2="274" y2="138" stroke="#4AF626" stroke-width="3" stroke-linecap="round"></line><rect x="271" y="131" width="6" height="6" rx="1.5" fill="#4AF626"></rect></g>
-<rect x="212" y="172" width="76" height="76" rx="12" fill="#14110C" stroke="#4AF626" stroke-width="2"></rect>
-<circle cx="223" cy="183" r="3" fill="#14110C" stroke="#4AF626" stroke-width="1.3"></circle>
-<rect x="226" y="186" width="48" height="48" rx="6" fill="#0B0D10" stroke="#4AF626" stroke-width="1"></rect>
-<g stroke="#4AF626" stroke-width="1" opacity="0.3">
+<circle cx="250" cy="210" r="106" fill="url(#irisGrad)" stroke="#43D9A0" stroke-width="2"></circle>
+<g transform="rotate(0 250 210)"><line x1="226" y1="174" x2="226" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="223" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="238" y1="174" x2="238" y2="124" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="235" y="117" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="250" y1="174" x2="250" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="247" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="262" y1="174" x2="262" y2="124" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="259" y="117" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="274" y1="174" x2="274" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="271" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect></g>
+<g transform="rotate(90 250 210)"><line x1="226" y1="174" x2="226" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="223" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="238" y1="174" x2="238" y2="124" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="235" y="117" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="250" y1="174" x2="250" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="247" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="262" y1="174" x2="262" y2="124" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="259" y="117" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="274" y1="174" x2="274" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="271" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect></g>
+<g transform="rotate(180 250 210)"><line x1="226" y1="174" x2="226" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="223" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="238" y1="174" x2="238" y2="124" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="235" y="117" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="250" y1="174" x2="250" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="247" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="262" y1="174" x2="262" y2="124" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="259" y="117" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="274" y1="174" x2="274" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="271" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect></g>
+<g transform="rotate(270 250 210)"><line x1="226" y1="174" x2="226" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="223" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="238" y1="174" x2="238" y2="124" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="235" y="117" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="250" y1="174" x2="250" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="247" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="262" y1="174" x2="262" y2="124" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="259" y="117" width="6" height="6" rx="1.5" fill="#43D9A0"></rect><line x1="274" y1="174" x2="274" y2="138" stroke="#43D9A0" stroke-width="3" stroke-linecap="round"></line><rect x="271" y="131" width="6" height="6" rx="1.5" fill="#43D9A0"></rect></g>
+<rect x="212" y="172" width="76" height="76" rx="12" fill="#14110C" stroke="#43D9A0" stroke-width="2"></rect>
+<circle cx="223" cy="183" r="3" fill="#14110C" stroke="#43D9A0" stroke-width="1.3"></circle>
+<rect x="226" y="186" width="48" height="48" rx="6" fill="#0B0D10" stroke="#43D9A0" stroke-width="1"></rect>
+<g stroke="#43D9A0" stroke-width="1" opacity="0.3">
 <line x1="242" y1="186" x2="242" y2="234"></line>
 <line x1="258" y1="186" x2="258" y2="234"></line>
 <line x1="226" y1="202" x2="274" y2="202"></line>
 <line x1="226" y1="218" x2="274" y2="218"></line>
 </g>
-<circle cx="250" cy="210" r="11" fill="#4AF626">
+<circle cx="250" cy="210" r="11" fill="#43D9A0">
 <animate attributeName="r" values="11;13;11" dur="2.4s" repeatCount="indefinite"></animate>
 </circle>
 <circle cx="238" cy="198" r="3" fill="#FFF4E0">
@@ -355,7 +353,7 @@
 </g>
 </svg>
 
-<h1 class="glitch" data-text="SUDORM0X">SUDO<span>RM0X</span></h1>
+<h1>SUDO<span>RM0X</span></h1>
 <div class="terminal-line">
 <span class="prompt">$</span> <span class="cmd">whoami</span><br>
 <span class="typed">offensive security engineer</span>
@@ -396,18 +394,18 @@
 <div class="nf-logo" aria-hidden="true">
 <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
 <rect width="64" height="64" rx="12" fill="#0B0D10"></rect>
-<g fill="none" stroke="#4AF626" stroke-linejoin="round" stroke-linecap="round">
+<g fill="none" stroke="#43D9A0" stroke-linejoin="round" stroke-linecap="round">
 <path d="M8,32 C16,20 24,16 32,16 C40,16 48,20 56,32 C48,44 40,48 32,48 C24,48 16,44 8,32 Z" stroke-width="2.6"></path>
 <circle cx="32" cy="32" r="12.5" stroke-width="1.6" fill="#14110C"></circle>
 <rect x="25" y="25" width="14" height="14" rx="2.5" stroke-width="1.6" fill="#0B0D10"></rect>
 </g>
-<g stroke="#4AF626" stroke-width="0.8" opacity="0.4">
+<g stroke="#43D9A0" stroke-width="0.8" opacity="0.4">
 <line x1="29.7" y1="25" x2="29.7" y2="39"></line>
 <line x1="34.3" y1="25" x2="34.3" y2="39"></line>
 <line x1="25" y1="29.7" x2="39" y2="29.7"></line>
 <line x1="25" y1="34.3" x2="39" y2="34.3"></line>
 </g>
-<circle cx="32" cy="32" r="3.2" fill="#4AF626">
+<circle cx="32" cy="32" r="3.2" fill="#43D9A0">
 <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"></animate>
 </circle>
 </svg>
@@ -427,7 +425,7 @@
 <div class="nf-palette">
 <span style="background:#0B0D10;border:1px solid #22262C"></span>
 <span style="background:#ff4d6d"></span>
-<span style="background:#4AF626"></span>
+<span style="background:#43D9A0"></span>
 <span style="background:#2A9D97"></span>
 <span style="background:#FFF4E0"></span>
 <span style="background:#9AA0A6"></span>
@@ -583,7 +581,7 @@
         last = t;
         ctx.fillStyle = 'rgba(11,13,16,0.09)';
         ctx.fillRect(0, 0, c.width, c.height);
-        ctx.fillStyle = '#4AF626';
+        ctx.fillStyle = '#43D9A0';
         ctx.font = fontSize + 'px JetBrains Mono, monospace';
         for (var i = 0; i < drops.length; i++) {
           var ch = glyphs[Math.floor(Math.random() * glyphs.length)];
@@ -627,6 +625,28 @@
       ['focus', 'stack', 'projects', 'writeups', 'contact'].forEach(function (id) {
         var el = document.getElementById(id); if (el) spy.observe(el);
       });
+    }
+  }
+
+  /* ---- cycling typewriter (whoami answer) ---- */
+  var typedEl = document.querySelector('.typed');
+  if (typedEl) {
+    var phrases = ['offensive security engineer', 'full-stack developer', 'red team operator', '0-day researcher'];
+    if (reduce) {
+      typedEl.textContent = phrases[0];
+    } else {
+      var pi = 0, ci = 0, deleting = false;
+      (function tick() {
+        var p = phrases[pi];
+        typedEl.textContent = p.slice(0, ci);
+        if (!deleting) {
+          if (ci < p.length) { ci++; setTimeout(tick, 65); }
+          else { setTimeout(function () { deleting = true; tick(); }, 1500); }
+        } else {
+          if (ci > 0) { ci--; setTimeout(tick, 32); }
+          else { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(tick, 280); }
+        }
+      })();
     }
   }
 

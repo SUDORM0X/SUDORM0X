@@ -5,7 +5,7 @@
 <img src="assets/hero-banner.svg" width="100%" alt="SUDORM0X"/>
 
 <a href="#">
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=900&color=4AF626&center=true&vCenter=true&width=640&lines=%3E+.%2Fwhoami;offensive+security+%2B+full-stack;find+·+build+·+break+·+repeat" alt="whoami"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=900&color=43D9A0&center=true&vCenter=true&width=640&lines=%3E+.%2Fwhoami;offensive+security+%2B+full-stack;find+·+build+·+break+·+repeat" alt="whoami"/>
 </a>
 
 </div>
