@@ -10,7 +10,7 @@
 
 <img src="assets/headers/whoami.svg" width="480" alt="whoami"/>
 
-> I find the cracks before anyone else does — internal networks, web apps, real adversary emulation. And I build what I tear apart.
+> Boring contributing to security.
 
 <img src="assets/headers/loadout.svg" width="480" alt="loadout"/>
 
