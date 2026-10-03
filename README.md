@@ -1,75 +1,116 @@
+<!-- you inspected the source. respect. -->
+
 <div align="center">
 
-<img src="assets/eye.gif" width="210" alt="SUDORM0X">
+<img src="assets/hero-banner.svg" width="100%" alt="SUDORM0X"/>
 
-# SUDORM0X
-
-**offensive security engineer · full-stack dev**
-
-<img src="assets/skills/focus.svg" alt="Red Team · Adversary Emulation · 0-day Research">
+<a href="#">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=800&color=3FD0C9&center=true&vCenter=true&width=720&lines=%3E+whoami;offensive+security+engineer+%2F%2F+full-stack+dev;I+find+the+cracks+before+anyone+else+does;status%3A+jacked+in+%2F%2F+access+granted" alt="whoami"/>
+</a>
 
 </div>
+
+<br>
+
+```
+▓▒░ 0x00 // WHOAMI ░▒▓
+```
 
 ```console
 $ whoami
-offensive security engineer — trovo le crepe prima che lo facciano altri.
-reti interne · applicazioni web · emulazione di avversari reali.
-e costruisco le stesse applicazioni che poi metto sotto stress.
+I find the cracks before anyone else does — internal networks, web apps,
+real adversary emulation, pushed to where a real attacker would actually go.
+And I build the same applications I then tear apart. Everything here is code
+and methodology I use in the field, not slides.
 ```
 
----
+```
+▓▒░ 0x01 // ARSENAL ░▒▓
+```
 
 <div align="center">
 
-### 🧰 Stack
-
-**Languages**
+`languages`
 <br>
-<img src="assets/skills/languages.svg" alt="TypeScript · Python · JavaScript · Go · C · C# · Bash · PowerShell">
+<img src="assets/skills/languages.svg" alt="TypeScript · Python · JavaScript · Go · C · C# · Bash · PowerShell"/>
 
-**Frontend**
+`frontend`
 <br>
-<img src="assets/skills/frontend.svg" alt="React · Next.js · Tailwind · GSAP">
+<img src="assets/skills/frontend.svg" alt="React · Next.js · Tailwind · GSAP"/>
 
-**Backend &amp; Data**
+`backend & data`
 <br>
-<img src="assets/skills/backend.svg" alt="Node.js · PostgreSQL · Drizzle · Zod">
+<img src="assets/skills/backend.svg" alt="Node.js · PostgreSQL · Drizzle · Zod"/>
 
-**Security &amp; Recon**
+`security & recon`
 <br>
-<img src="assets/skills/security.svg" alt="Active Directory · Web Exploitation · Burp Suite · Metasploit · Kali Linux · nmap">
+<img src="assets/skills/security.svg" alt="Active Directory · Web Exploitation · Burp Suite · Metasploit · Kali Linux · nmap"/>
 
-**DevOps &amp; Tooling**
+`devops & tooling`
 <br>
-<img src="assets/skills/tooling.svg" alt="Git · Docker · Linux · Playwright · Neovim · VS Code">
+<img src="assets/skills/tooling.svg" alt="Git · Docker · Linux · Playwright · Neovim · VS Code"/>
 
 </div>
 
----
+```
+▓▒░ 0x02 // TRANSMISSIONS (featured ops) ░▒▓
+```
 
-### 📂 Progetti
+<table>
+<tr>
+<td width="50%" valign="top">
 
-| Repo | Cosa fa |
-| :--- | :--- |
-| [**Mustang-Panda-Emulation**](https://github.com/SUDORM0X/Chinese-APT-Mustang-Panda-Emulation) | Emulazione full-chain dell'APT Mustang Panda — abuso del reverse shell di VS Code per code execution e deploy di payload contro target governativi. |
-| [**OracleBuster**](https://github.com/SUDORM0X/OracleBuster) | Bash tool per il security testing di database Oracle: brute-force configurabile su IP, porte, SID e credenziali. |
-| [**W3B_Expl0it_TOOL**](https://github.com/SUDORM0X/W3B_Expl0it_TOOL) | Raccolta di tool Python per web exploitation. |
-| [**PoC-CVE-2018-15473**](https://github.com/SUDORM0X/PoC-CVE-2018-15473) | Proof-of-concept per CVE-2018-15473 — username enumeration su OpenSSH. |
+**[Mustang-Panda-Emulation](https://github.com/SUDORM0X/Chinese-APT-Mustang-Panda-Emulation)**
+Full-chain emulation of APT Mustang Panda — abusing the VS Code reverse shell for code execution and payload delivery against government targets.
 
-### 📝 Research & note
+</td>
+<td width="50%" valign="top">
 
-| Repo | Argomento |
-| :--- | :--- |
-| [**AD-WIN-EXPLOITATION**](https://github.com/SUDORM0X/AD-WIN-EXPLOITATION) | Active Directory & Windows exploitation. |
-| [**Port-Swigger-Web-Exploit-Note**](https://github.com/SUDORM0X/Port-Swigger-Web-Exploit-Note) | Note tecniche sui lab PortSwigger Web Security Academy. |
-| [**OSCP-Preparation**](https://github.com/SUDORM0X/OSCP-Preparation---Mariosk0x) | Metodologia e preparazione OSCP. |
+**[OracleBuster](https://github.com/SUDORM0X/OracleBuster)**
+Bash tool for Oracle database security testing — configurable brute-force across IPs, ports, SIDs and credentials.
 
----
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**[W3B_Expl0it_TOOL](https://github.com/SUDORM0X/W3B_Expl0it_TOOL)**
+A collection of Python tools for web exploitation.
+
+</td>
+<td width="50%" valign="top">
+
+**[PoC-CVE-2018-15473](https://github.com/SUDORM0X/PoC-CVE-2018-15473)**
+Proof-of-concept for CVE-2018-15473 — OpenSSH username enumeration.
+
+</td>
+</tr>
+</table>
+
+```
+▓▒░ 0x03 // RESEARCH & NOTES ░▒▓
+```
+
+- **[AD-WIN-EXPLOITATION](https://github.com/SUDORM0X/AD-WIN-EXPLOITATION)** — Active Directory & Windows exploitation.
+- **[Port-Swigger-Web-Exploit-Note](https://github.com/SUDORM0X/Port-Swigger-Web-Exploit-Note)** — technical notes on the PortSwigger Web Security Academy labs.
+- **[OSCP-Preparation](https://github.com/SUDORM0X/OSCP-Preparation---Mariosk0x)** — OSCP methodology & preparation.
+
+```
+▓▒░ 0x04 // TELEMETRY ░▒▓
+```
 
 <div align="center">
 
-<img src="assets/eye.gif" width="60" alt="">
+<img src="https://raw.githubusercontent.com/SUDORM0X/SUDORM0X/output/github-contribution-grid-snake-dark.svg" width="100%" alt="contribution snake"/>
 
-🔒 Tutto il materiale è a scopo di ricerca e penetration testing autorizzato.
+</div>
+
+<br>
+
+<div align="center">
+
+<img src="assets/eye.gif" width="60" alt=""/>
+
+<sub>🔒 Everything here is for research and authorized penetration testing only.</sub>
 
 </div>
